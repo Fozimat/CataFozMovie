@@ -1,0 +1,84 @@
+{
+  "movies": [
+    {
+      "title": "Alita: Battle Angel",
+      "year": 2019,
+      "genre": "Action, Fantasy, Adventure",
+      "description": "When Alita awakens with no memories of who she is in a future world she doesn't know, she is captured by Ido, a compassionate doctor who realizes that somewhere in the shell of this abandoned cyborg is the heart and soul of an extraordinary young woman",
+      "duration": "2h 2m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/quWP5VIzTUf0Hr8AJZLloM6js8I.jpg"
+    },
+    {
+      "title": "Bohemian Rhapsody",
+      "year": 2018,
+      "genre": "Musical, Drama, Science",
+      "description": "Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist John Deacon take the music world by storm when they form the rock 'n' roll band Queen in 1970. Hit songs become instant classics. When Mercury's increasingly wild lifestyle starts to spiral out of control, Queen soon faces its greatest challenge yet – finding a way to keep the band together amid the success and excess.",
+      "duration": "2h 15m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg"
+    },
+    {
+      "title": "Fantastic Beasts: The Crimes of Grindelwald",
+      "year": 2018,
+      "genre": "Adventure, Fantasy, Drama",
+      "description": "Gellert Grindelwald has escaped imprisonment and has begun gathering followers to his cause—elevating wizards above all non-magical beings. The only one capable of putting a stop to him is the wizard he once called his closest friend, Albus Dumbledore. However, Dumbledore will need to seek help from the wizard who had thwarted Grindelwald once before, his former student Newt Scamander, who agrees to help, unaware of the dangers that lie ahead.",
+      "duration": "2h 14m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/fMMrl8fD9gRCFJvsx0SuFwkEOop.jpg"
+    },
+    {
+      "title": "Glass",
+      "year": 2019,
+      "genre": "Thriller, Drama, Science Fiction",
+      "description": "In a series of escalating encounters, former security guard David Dunn uses his supernatural abilities to track Kevin Wendell Crumb, a disturbed man who has twenty-four personalities. Meanwhile, the shadowy presence of Elijah Price emerges as an orchestrator who holds secrets critical to both men.",
+      "duration": "2h 9m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xt88UO9K0SubHWDGYrW2Mr9CKa6.jpg"
+    },
+    {
+      "title": "How to Train Your Dragon: The Hidden World",
+      "year": 2019,
+      "genre": "Animation, Family, Adventure",
+      "description": "As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless’ discovery of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and Hiccup’s reign as village chief is tested, both dragon and rider must make impossible decisions to save their kind.",
+      "duration": "1h 44m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xvx4Yhf0DVH8G4LzNISpMfFBDy2.jpg"
+    },
+    {
+      "title": "Avengers: Infinity War",
+      "year": 2018,
+      "genre": "Adventure, Action, Science",
+      "description": "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality.",
+      "duration": "2h 29m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+    },
+    {
+      "title": "Master Z: Ip Man Legacy",
+      "year": 2018,
+      "genre": "Action",
+      "description": "Following his defeat by Master Ip, Cheung Tin Chi tries to make a life with his young son in Hong Kong, waiting tables at a bar that caters to expats. But it's not long before the mix of foreigners, money, and triad leaders draw him once again to the fight.",
+      "duration": "1h 47m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6VxEvOF7QDovsG6ro9OVyjH07LF.jpg"
+    },
+    {
+      "title": "Mortal Engines",
+      "year": 2018,
+      "genre": "Adventure, Science Fiction",
+      "description": "Many thousands of years in the future, Earth’s cities roam the globe on huge wheels, devouring each other in a struggle for ever diminishing resources. On one of these massive traction cities, the old London, Tom Natsworthy has an unexpected encounter with a mysterious young woman from the wastelands who will change the course of his life forever.",
+      "duration": "2h 9m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gLhYg9NIvIPKVRTtvzCWnp1qJWG.jpg"
+    },
+    {
+      "title": "Overlord",
+      "year": 2018,
+      "genre": "Fiction",
+      "description": "France, June 1944. On the eve of D-Day, some American paratroopers fall behind enemy lines after their aircraft crashes while on a mission to destroy a radio tower in a small village near the beaches of Normandy. After reaching their target, the surviving paratroopers realise that, they also must fight against something else.",
+      "duration": "1h 50m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/l76Rgp32z2UxjULApxGXAPpYdAP.jpg"
+    },
+    {
+      "title": "Wreck-It Ralph",
+      "year": 2012,
+      "genre": "Family, Animation, Comedy",
+      "description": "Wreck-It Ralph is the 9-foot-tall, 643-pound villain of an arcade video game named Fix-It Felix Jr., in which the game's titular hero fixes buildings that Ralph destroys. Wanting to prove he can be a good guy and not just a villain, Ralph escapes his game and lands in Hero's Duty, a first-person shooter where he helps the game's hero battle against alien invaders.",
+      "duration": "1h 41m",
+      "image": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nsUAgWCxqbTD9wkKrv3nBGH2DVk.jpg"
+    }
+  ]
+}
