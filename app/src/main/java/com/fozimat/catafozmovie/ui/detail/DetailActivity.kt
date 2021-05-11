@@ -1,12 +1,11 @@
 package com.fozimat.catafozmovie.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.fozimat.catafozmovie.R
 import com.fozimat.catafozmovie.data.MoviesEntity
 import com.fozimat.catafozmovie.databinding.ActivityDetailBinding
 import com.fozimat.catafozmovie.databinding.ContentDetailMovieBinding
