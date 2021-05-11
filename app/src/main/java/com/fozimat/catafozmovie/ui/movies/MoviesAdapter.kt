@@ -1,5 +1,6 @@
 package com.fozimat.catafozmovie.ui.movies
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,6 +8,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.fozimat.catafozmovie.data.MoviesEntity
 import com.fozimat.catafozmovie.databinding.ItemsMoviesBinding
+import com.fozimat.catafozmovie.ui.detail.DetailActivity
+import com.fozimat.catafozmovie.utils.MovieType
 
 class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
 
@@ -44,12 +47,12 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
                     .load(movie.image)
                     .apply(RequestOptions())
                     .into(imgMovies)
-//                itemView.setOnClickListener {
-//                    val intent = Intent(itemView.context, DetailActivity::class.java)
-//                    intent.putExtra(DetailActivity.EXTRA_MOVIE, movie.title)
-//                    intent.putExtra(DetailActivity.EXTRA_TYPE, MovieType.MOVIE.type)
-//                    itemView.context.startActivity(intent)
-//                }
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailActivity::class.java)
+                    intent.putExtra(DetailActivity.EXTRA_MOVIE, movie.title)
+                    intent.putExtra(DetailActivity.EXTRA_TYPE, MovieType.MOVIE.type)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }

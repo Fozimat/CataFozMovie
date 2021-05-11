@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.fozimat.catafozmovie.data.MovieRepository
 import com.fozimat.catafozmovie.di.Injection
+import com.fozimat.catafozmovie.ui.detail.DetailViewModel
 import com.fozimat.catafozmovie.ui.movies.MoviesViewModel
 import com.fozimat.catafozmovie.ui.show.TvShowViewModel
 
@@ -32,9 +33,9 @@ class ViewModelFactory private constructor(private val mMovieRepository: MovieRe
             modelClass.isAssignableFrom(TvShowViewModel::class.java) -> {
                 TvShowViewModel(mMovieRepository) as T
             }
-//            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
-//                DetailViewModel(mMovieRepository) as T
-//            }
+            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
+                DetailViewModel(mMovieRepository) as T
+            }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }
     }

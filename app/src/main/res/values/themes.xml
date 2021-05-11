@@ -14,7 +14,20 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.CataFozMovie.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.CataFozMovie.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.CataFozMovie.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/bg_movie</item>
+    </style>
+
+    <style name="BottomNavTextViewStyle">
+        <item name="fontFamily">@font/montserrat</item>
     </style>
 </resources>
