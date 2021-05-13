@@ -1,6 +1,6 @@
 package com.fozimat.catafozmovie.utils
 
-import com.fozimat.catafozmovie.data.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 import com.fozimat.catafozmovie.data.source.remote.response.MovieResponse
 
 object DataDummy {

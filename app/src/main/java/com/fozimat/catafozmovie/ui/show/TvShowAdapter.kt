@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.fozimat.catafozmovie.data.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 import com.fozimat.catafozmovie.databinding.ItemsTvBinding
 import com.fozimat.catafozmovie.ui.detail.DetailActivity
 import com.fozimat.catafozmovie.utils.MovieType

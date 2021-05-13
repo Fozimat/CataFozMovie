@@ -4,10 +4,9 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.fozimat.catafozmovie.data.MovieRepository
-import com.fozimat.catafozmovie.data.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 import com.fozimat.catafozmovie.utils.DataDummy
 import junit.framework.TestCase
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

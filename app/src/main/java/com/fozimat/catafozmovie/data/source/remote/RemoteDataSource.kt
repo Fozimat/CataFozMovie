@@ -2,6 +2,8 @@ package com.fozimat.catafozmovie.data.source.remote
 
 import android.os.Handler
 import android.os.Looper
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.fozimat.catafozmovie.data.source.remote.response.MovieResponse
 import com.fozimat.catafozmovie.utils.EspressoIdlingResource
 import com.fozimat.catafozmovie.utils.JsonHelper
@@ -24,24 +26,28 @@ class RemoteDataSource private constructor(private val jsonHelper: JsonHelper) {
             }
     }
 
-    fun getAllMovies(callback: LoadMovieCallBack) {
+    fun getAllMovies(): LiveData<ApiResponse<List<MovieResponse>>> {
         EspressoIdlingResource.increment()
+        val resultMovie = MutableLiveData<ApiResponse<List<MovieResponse>>>()
         handler.postDelayed(
             {
-                callback.onAllMoviesReceived(jsonHelper.loadMovies())
+                resultMovie.value = ApiResponse.success(jsonHelper.loadMovies())
                 EspressoIdlingResource.decrement()
             }, SERVICE_LATENCY_IN_MILLIS
         )
+        return resultMovie
     }
 
-    fun getAllTvShow(callback: LoadShowCallBack) {
+    fun getAllTvShow(): LiveData<ApiResponse<List<MovieResponse>>> {
         EspressoIdlingResource.increment()
+        val resultMovie = MutableLiveData<ApiResponse<List<MovieResponse>>>()
         handler.postDelayed(
             {
-                callback.onAllShowReceived(jsonHelper.loadTvShow())
+                resultMovie.value = ApiResponse.success(jsonHelper.loadTvShow())
                 EspressoIdlingResource.decrement()
             }, SERVICE_LATENCY_IN_MILLIS
         )
+        return resultMovie
     }
 
     interface LoadMovieCallBack {

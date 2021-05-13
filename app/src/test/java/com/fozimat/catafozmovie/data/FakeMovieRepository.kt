@@ -3,6 +3,7 @@ package com.fozimat.catafozmovie.data
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.fozimat.catafozmovie.data.source.MovieDataSource
+import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 import com.fozimat.catafozmovie.data.source.remote.RemoteDataSource
 import com.fozimat.catafozmovie.data.source.remote.response.MovieResponse
 

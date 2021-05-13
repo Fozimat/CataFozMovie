@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.fozimat.catafozmovie.data.MovieRepository
-import com.fozimat.catafozmovie.data.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 import com.fozimat.catafozmovie.utils.DataDummy
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.Assert.*

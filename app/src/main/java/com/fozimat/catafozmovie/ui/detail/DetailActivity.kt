@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.fozimat.catafozmovie.data.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 import com.fozimat.catafozmovie.databinding.ActivityDetailBinding
 import com.fozimat.catafozmovie.databinding.ContentDetailMovieBinding
 import com.fozimat.catafozmovie.utils.MovieType

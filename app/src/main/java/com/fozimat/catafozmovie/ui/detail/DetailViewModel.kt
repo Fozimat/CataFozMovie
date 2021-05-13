@@ -3,7 +3,7 @@ package com.fozimat.catafozmovie.ui.detail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.fozimat.catafozmovie.data.MovieRepository
-import com.fozimat.catafozmovie.data.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 
 class DetailViewModel(private val movieRepository: MovieRepository) : ViewModel() {
 

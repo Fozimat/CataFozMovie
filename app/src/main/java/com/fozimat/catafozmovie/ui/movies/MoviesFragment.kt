@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.fozimat.catafozmovie.databinding.FragmentMoviesBinding
 import com.fozimat.catafozmovie.viewmodel.ViewModelFactory
+import com.fozimat.catafozmovie.vo.Status
 
 class MoviesFragment : Fragment() {
 
@@ -33,12 +35,22 @@ class MoviesFragment : Fragment() {
             )[MoviesViewModel::class.java]
 
             val moviesAdapter = MoviesAdapter()
-
-            fragmentMoviesBinding.progressBar.visibility = View.VISIBLE
             viewModel.getMovies().observe(viewLifecycleOwner, { movies ->
-                fragmentMoviesBinding.progressBar.visibility = View.GONE
-                moviesAdapter.setMovies(movies)
-                moviesAdapter.notifyDataSetChanged()
+                if (movies != null) {
+                    when (movies.status) {
+                        Status.LOADING -> fragmentMoviesBinding.progressBar.visibility =
+                            View.VISIBLE
+                        Status.SUCCESS -> {
+                            fragmentMoviesBinding.progressBar.visibility = View.GONE
+                            moviesAdapter.setMovies(movies.data)
+                            moviesAdapter.notifyDataSetChanged()
+                        }
+                        Status.ERROR -> {
+                            fragmentMoviesBinding.progressBar.visibility = View.GONE
+                            Toast.makeText(context, "Something wrong", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
             })
 
             with(fragmentMoviesBinding.rvMovies) {
