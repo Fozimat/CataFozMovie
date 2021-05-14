@@ -1,4 +1,4 @@
-package com.fozimat.catafozmovie
+package com.fozimat.catafozmovie.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.fozimat.catafozmovie.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +21,8 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.navigation_movies, R.id.navigation_tvShow, R.id.navigation_favorite))
+            R.id.navigation_movies, R.id.navigation_tvShow, R.id.navigation_favorite
+        ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 

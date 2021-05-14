@@ -6,16 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.TvShowEntity
 import com.fozimat.catafozmovie.databinding.ItemsTvBinding
 import com.fozimat.catafozmovie.ui.detail.DetailActivity
 import com.fozimat.catafozmovie.utils.MovieType
 
 class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.MovieViewHolder>() {
 
-    private var listMovies = ArrayList<MoviesEntity>()
+    private var listMovies = ArrayList<TvShowEntity>()
 
-    fun setMovies(movies: List<MoviesEntity>?) {
+    fun setMovies(movies: List<TvShowEntity>?) {
         if (movies == null) return
         this.listMovies.clear()
         this.listMovies.addAll(movies)
@@ -39,7 +39,7 @@ class TvShowAdapter : RecyclerView.Adapter<TvShowAdapter.MovieViewHolder>() {
 
     class MovieViewHolder(private val binding: ItemsTvBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(movie: MoviesEntity) {
+        fun bind(movie: TvShowEntity) {
             with(binding) {
                 tvItemTitle.text = movie.title
                 tvItemDetail.text = movie.description

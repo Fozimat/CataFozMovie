@@ -60,5 +60,4 @@ class MoviesFragment : Fragment() {
             }
         }
     }
-
 }

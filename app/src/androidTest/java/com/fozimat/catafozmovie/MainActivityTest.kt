@@ -10,6 +10,7 @@ import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
+import com.fozimat.catafozmovie.ui.MainActivity
 import com.fozimat.catafozmovie.utils.DataDummy
 import com.fozimat.catafozmovie.utils.EspressoIdlingResource
 import org.junit.After

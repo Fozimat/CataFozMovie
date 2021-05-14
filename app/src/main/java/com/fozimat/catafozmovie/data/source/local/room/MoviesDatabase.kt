@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.TvShowEntity
 
 @Database(
-    entities = [MoviesEntity::class],
+    entities = [MoviesEntity::class, TvShowEntity::class],
     version = 1,
     exportSchema = false
 )

@@ -1,6 +1,7 @@
 package com.fozimat.catafozmovie.utils
 
 import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.TvShowEntity
 import com.fozimat.catafozmovie.data.source.remote.response.MovieResponse
 
 object DataDummy {
@@ -112,12 +113,12 @@ object DataDummy {
         return movies
     }
 
-    fun generateTvShow(): List<MoviesEntity> {
+    fun generateTvShow(): List<TvShowEntity> {
 
-        val movies = ArrayList<MoviesEntity>()
+        val movies = ArrayList<TvShowEntity>()
 
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "Arrow",
                 2012,
                 "Crime, Drama, Mystery, Action",
@@ -127,7 +128,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "Doom Patrol",
                 2019,
                 "Sci-Fi & Fantasy, Comedy, Drama",
@@ -137,7 +138,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "Dragon Ball Super",
                 2015,
                 "Animation, Adventure, Fantasy",
@@ -147,7 +148,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "Family Guy",
                 1999,
                 "Animation, Comedy",
@@ -157,7 +158,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "The Flash",
                 2022,
                 "Action, Adventure, Science Fiction",
@@ -167,7 +168,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "Game of Thrones",
                 2011,
                 "Adventure, Action, Science Fiction",
@@ -177,7 +178,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "Naruto Shippuden the Movie",
                 2007,
                 "Family, Action, Animation",
@@ -187,7 +188,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "Shameless",
                 2011,
                 "Drama, Comedy",
@@ -197,7 +198,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "Supergirl",
                 2015,
                 "Drama, Sci-Fi & Fantasy",
@@ -207,7 +208,7 @@ object DataDummy {
             )
         )
         movies.add(
-            MoviesEntity(
+            TvShowEntity(
                 "The Simpsons",
                 1989,
                 "Family, Animation, Comedy",

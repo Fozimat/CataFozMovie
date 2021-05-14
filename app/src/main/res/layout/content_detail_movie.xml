@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:background="@color/gray_200">
 
-    <ImageView
-        android:id="@+id/img_movies"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:layout_marginTop="16dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/movies"
-        android:scaleType="fitCenter"
-        tools:src="@color/purple_200" />
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+        <ImageView
+            android:id="@+id/img_movies"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/movies"
+            tools:src="@color/purple_200" />
+
+    </com.google.android.material.card.MaterialCardView>
+
 
     <TextView
         android:id="@+id/tv_item_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/img_movies"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:ellipsize="end"
@@ -29,13 +40,14 @@
         android:text="@string/title"
         android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:fontFamily="@font/poppins_semibold"
+        android:textStyle="bold"
+        tools:ignore="NotSibling" />
 
     <TextView
         android:id="@+id/tv_item_year"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_item_title"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:paddingLeft="10dp"
@@ -44,13 +56,13 @@
         android:text="@string/year"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:fontFamily="@font/montserrat"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_item_genre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_item_year"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:paddingLeft="10dp"
@@ -59,13 +71,13 @@
         android:text="@string/genre"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:fontFamily="@font/montserrat"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_item_duration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_item_year"
         android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="5dp"
@@ -74,6 +86,7 @@
         android:paddingRight="10dp"
         android:text="@string/duration"
         android:textColor="@color/white"
+        android:fontFamily="@font/poppins_light"
         android:textSize="14sp"
         android:textStyle="bold" />
 
@@ -81,7 +94,6 @@
         android:id="@+id/tv_item_detail"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_below="@id/tv_item_duration"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
@@ -89,7 +101,8 @@
         android:paddingTop="20dp"
         android:paddingRight="10dp"
         android:text="@string/detail"
+        android:fontFamily="@font/poppins_light"
         android:textColor="@color/white"
         android:textSize="16sp" />
 
-</RelativeLayout>
+</LinearLayout>
