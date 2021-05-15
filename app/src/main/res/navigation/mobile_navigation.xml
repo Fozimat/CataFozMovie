@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_favorite"
-        android:name="com.fozimat.catafozmovie.ui.favorite.NotificationsFragment"
+        android:name="com.fozimat.catafozmovie.ui.favorite.FavoriteFragment"
         android:label="@string/favorite"
         tools:layout="@layout/fragment_favorite" />
 </navigation>
