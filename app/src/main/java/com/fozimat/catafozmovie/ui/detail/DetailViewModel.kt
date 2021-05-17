@@ -17,6 +17,10 @@ class DetailViewModel(private val movieRepository: MovieRepository) : ViewModel(
         this.title.value = title
     }
 
+    fun setSelectedTvShow(title: String) {
+        this.title.value = title
+    }
+
     var movie: LiveData<Resource<MoviesEntity>> = Transformations.switchMap(title) { title ->
         movieRepository.getDetailMovie(title)
     }

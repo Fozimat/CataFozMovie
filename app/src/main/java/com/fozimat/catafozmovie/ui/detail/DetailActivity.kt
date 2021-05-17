@@ -84,7 +84,7 @@ class DetailActivity : AppCompatActivity() {
                 MovieType.SHOW.type -> {
                     val title = extras.getString(EXTRA_TV)
                     if (title != null) {
-                        viewModel.setSelectedMovie(title)
+                        viewModel.setSelectedTvShow(title)
                         viewModel.tvShow.observe(this, {
                             if (it != null) {
                                 when (it.status) {

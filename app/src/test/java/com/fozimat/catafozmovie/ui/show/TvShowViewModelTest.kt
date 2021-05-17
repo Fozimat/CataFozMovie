@@ -4,15 +4,18 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.fozimat.catafozmovie.data.MovieRepository
-import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
+import com.fozimat.catafozmovie.data.source.local.entity.TvShowEntity
 import com.fozimat.catafozmovie.utils.DataDummy
-import org.junit.Assert.*
+import com.fozimat.catafozmovie.vo.Resource
+import com.nhaarman.mockitokotlin2.verify
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
+import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -27,7 +30,7 @@ class TvShowViewModelTest {
     private lateinit var movieRepository: MovieRepository
 
     @Mock
-    private lateinit var observer: Observer<List<MoviesEntity>>
+    private lateinit var observer: Observer<Resource<List<TvShowEntity>>>
 
     @Before
     fun setUp() {
@@ -36,17 +39,17 @@ class TvShowViewModelTest {
 
     @Test
     fun getMovies() {
-        val dummyMovies = DataDummy.generateTvShow()
-        val movies = MutableLiveData<List<MoviesEntity>>()
+        val dummyMovies = Resource.success(DataDummy.generateTvShow())
+        val movies = MutableLiveData<Resource<List<TvShowEntity>>>()
         movies.value = dummyMovies
 
-        Mockito.`when`(movieRepository.getAllTvShow()).thenReturn(movies)
-        val movieEntities = viewModel.getMovies().value
-        Mockito.verify(movieRepository).getAllTvShow()
+        `when`(movieRepository.getAllTvShow()).thenReturn(movies)
+        val movieEntities = viewModel.getMovies().value?.data
+        verify(movieRepository).getAllTvShow()
         assertNotNull(movieEntities)
         assertEquals(10, movieEntities?.size)
 
         viewModel.getMovies().observeForever(observer)
-        Mockito.verify(observer).onChanged(dummyMovies)
+        verify(observer).onChanged(dummyMovies)
     }
 }
