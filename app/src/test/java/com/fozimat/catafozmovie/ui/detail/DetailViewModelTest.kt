@@ -9,6 +9,7 @@ import com.fozimat.catafozmovie.data.source.local.entity.TvShowEntity
 import com.fozimat.catafozmovie.utils.DataDummy
 import com.fozimat.catafozmovie.vo.Resource
 import com.nhaarman.mockitokotlin2.verify
+import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
@@ -49,12 +50,13 @@ class DetailViewModelTest {
     }
 
     @Test
-    fun getMovie() {
-        val dummyMovies = Resource.success(DataDummy.generateDummyMovies()[0])
+    fun getMovieDetail() {
+        val dummyMovies = Resource.success(dummyMovie)
         val movies = MutableLiveData<Resource<MoviesEntity>>()
         movies.value = dummyMovies
 
         `when`(movieRepository.getDetailMovie(titleMovie)).thenReturn(movies)
+        viewModel.movie = movieRepository.getDetailMovie(titleMovie)
         val movieEntity = viewModel.movie.value
         verify(movieRepository).getDetailMovie(titleMovie)
         assertNotNull(movieEntity)
@@ -70,12 +72,13 @@ class DetailViewModelTest {
     }
 
     @Test
-    fun getTvShow() {
-        val dummyShows = Resource.success(DataDummy.generateTvShow()[0])
+    fun getTvShowDetail() {
+        val dummyShows = Resource.success(dummyShow)
         val movies = MutableLiveData<Resource<TvShowEntity>>()
         movies.value = dummyShows
 
         `when`(movieRepository.getDetailShow(titleShow)).thenReturn(movies)
+        viewModel.tvShow = movieRepository.getDetailShow(titleShow)
         val movieEntity = viewModel.tvShow.value
         verify(movieRepository).getDetailShow(titleShow)
         assertNotNull(movieEntity)
@@ -88,5 +91,57 @@ class DetailViewModelTest {
 
         viewModel.tvShow.observeForever(showObserver)
         verify(showObserver).onChanged(dummyShows)
+    }
+
+    @Test
+    fun setMovieFav() {
+        val dummyMovies = Resource.success(dummyMovie)
+        val movies = MutableLiveData<Resource<MoviesEntity>>()
+        movies.value = dummyMovies
+
+        `when`(movieRepository.getDetailMovie(titleMovie)).thenReturn(movies)
+        viewModel.movie = movieRepository.getDetailMovie(titleMovie)
+        viewModel.setFavorite()
+        verify(movieRepository).setMoviesFav(movies.value?.data as MoviesEntity, true)
+        verifyNoMoreInteractions(movieObserver)
+    }
+
+    @Test
+    fun setTvShowFav() {
+        val dummyShow = Resource.success(dummyShow)
+        val movies = MutableLiveData<Resource<TvShowEntity>>()
+        movies.value = dummyShow
+
+        `when`(movieRepository.getDetailShow(titleShow)).thenReturn(movies)
+        viewModel.tvShow = movieRepository.getDetailShow(titleShow)
+        viewModel.setFavorite()
+        verify(movieRepository).setTvShowFav(movies.value?.data as TvShowEntity, true)
+        verifyNoMoreInteractions(showObserver)
+    }
+
+    @Test
+    fun deleteMovieFav() {
+        val dummyMovies = Resource.success(dummyMovie)
+        val movies = MutableLiveData<Resource<MoviesEntity>>()
+        movies.value = dummyMovies
+
+        `when`(movieRepository.getDetailMovie(titleMovie)).thenReturn(movies)
+        viewModel.movie = movieRepository.getDetailMovie(titleMovie)
+        viewModel.setFavorite()
+        verify(movieRepository).setMoviesFav(movies.value?.data as MoviesEntity, false)
+        verifyNoMoreInteractions(movieObserver)
+    }
+
+    @Test
+    fun deleteTvShowFav() {
+        val dummyShow = Resource.success(dummyShow)
+        val movies = MutableLiveData<Resource<TvShowEntity>>()
+        movies.value = dummyShow
+
+        `when`(movieRepository.getDetailShow(titleShow)).thenReturn(movies)
+        viewModel.tvShow = movieRepository.getDetailShow(titleShow)
+        viewModel.setFavorite()
+        verify(movieRepository).setTvShowFav(movies.value?.data as TvShowEntity, false)
+        verifyNoMoreInteractions(showObserver)
     }
 }
