@@ -6,21 +6,16 @@ import androidx.lifecycle.Observer
 import androidx.paging.PagedList
 import com.fozimat.catafozmovie.data.MovieRepository
 import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
-import com.fozimat.catafozmovie.ui.movies.MoviesViewModel
-import com.fozimat.catafozmovie.vo.Resource
 import com.nhaarman.mockitokotlin2.verify
-import junit.framework.TestCase
-import org.junit.After
 import org.junit.Before
-import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Rule
+import org.junit.Test
+import org.junit.runner.RunWith
 import org.mockito.Mock
-import org.mockito.Mockito
 import org.mockito.Mockito.`when`
-import org.mockito.Mockito.mock
+import org.mockito.junit.MockitoJUnitRunner
 
+@RunWith(MockitoJUnitRunner::class)
 class FavMoviesViewModelTest {
 
     private lateinit var viewModel: FavMoviesViewModel
