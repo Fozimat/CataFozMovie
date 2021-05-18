@@ -37,6 +37,7 @@ class DetailViewModelTest {
     @Mock
     private lateinit var movieObserver: Observer<Resource<MoviesEntity>>
 
+    @Mock
     private lateinit var showObserver: Observer<Resource<TvShowEntity>>
 
 

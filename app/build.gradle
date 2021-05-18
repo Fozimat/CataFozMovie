@@ -74,4 +74,6 @@ dependencies {
     kapt "androidx.room:room-compiler:$roomVersion"
 
     kapt "com.github.bumptech.glide:compiler:$glideCompilerVersion"
+
+    implementation "androidx.paging:paging-runtime:$pagingVersion"
 }

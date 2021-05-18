@@ -3,9 +3,9 @@ package com.fozimat.catafozmovie.ui.show
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.paging.PagedList
 import com.fozimat.catafozmovie.data.MovieRepository
 import com.fozimat.catafozmovie.data.source.local.entity.TvShowEntity
-import com.fozimat.catafozmovie.utils.DataDummy
 import com.fozimat.catafozmovie.vo.Resource
 import com.nhaarman.mockitokotlin2.verify
 import org.junit.Assert.assertEquals
@@ -30,7 +30,10 @@ class TvShowViewModelTest {
     private lateinit var movieRepository: MovieRepository
 
     @Mock
-    private lateinit var observer: Observer<Resource<List<TvShowEntity>>>
+    private lateinit var observer: Observer<Resource<PagedList<TvShowEntity>>>
+
+    @Mock
+    private lateinit var pagedList: PagedList<TvShowEntity>
 
     @Before
     fun setUp() {
@@ -39,8 +42,9 @@ class TvShowViewModelTest {
 
     @Test
     fun getMovies() {
-        val dummyMovies = Resource.success(DataDummy.generateTvShow())
-        val movies = MutableLiveData<Resource<List<TvShowEntity>>>()
+        val dummyMovies = Resource.success(pagedList)
+        `when`(dummyMovies.data?.size).thenReturn(10)
+        val movies = MutableLiveData<Resource<PagedList<TvShowEntity>>>()
         movies.value = dummyMovies
 
         `when`(movieRepository.getAllTvShow()).thenReturn(movies)

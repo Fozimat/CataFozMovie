@@ -49,4 +49,6 @@ ext {
     roomRuntimeVersion = '2.3.0'
 
     glideCompilerVersion = '4.11.0'
+
+    pagingVersion = '2.1.1'
 }

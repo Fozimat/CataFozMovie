@@ -1,6 +1,7 @@
 package com.fozimat.catafozmovie.data.source.local
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 import com.fozimat.catafozmovie.data.source.local.entity.TvShowEntity
 import com.fozimat.catafozmovie.data.source.local.room.MoviesDao
@@ -14,17 +15,17 @@ class LocalDataSource private constructor(private val mMoviesDao: MoviesDao){
             INSTANCE ?: LocalDataSource(moviesDao)
     }
 
-    fun getMovies(): LiveData<List<MoviesEntity>> = mMoviesDao.getMovies()
+    fun getMovies(): DataSource.Factory<Int, MoviesEntity> = mMoviesDao.getMovies()
 
-    fun getTvShow(): LiveData<List<TvShowEntity>> = mMoviesDao.getTvShow()
+    fun getTvShow(): DataSource.Factory<Int, TvShowEntity> = mMoviesDao.getTvShow()
 
     fun getDetailMovie(title: String): LiveData<MoviesEntity> = mMoviesDao.getDetailMovie(title)
 
     fun getDetailTvShow(title:String): LiveData<TvShowEntity> = mMoviesDao.getDetailTvShow(title)
 
-    fun getMoviesFav(): LiveData<List<MoviesEntity>> = mMoviesDao.getMoviesFav()
+    fun getMoviesFav(): DataSource.Factory<Int, MoviesEntity> = mMoviesDao.getMoviesFav()
 
-    fun getTvShowFav(): LiveData<List<TvShowEntity>> = mMoviesDao.getTvShowFav()
+    fun getTvShowFav(): DataSource.Factory<Int, TvShowEntity> = mMoviesDao.getTvShowFav()
 
     fun insertMovies(movies: List<MoviesEntity>) = mMoviesDao.insertMovies(movies)
 

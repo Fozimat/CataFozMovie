@@ -3,6 +3,7 @@ package com.fozimat.catafozmovie.ui.movies
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.paging.PagedList
 import com.fozimat.catafozmovie.data.MovieRepository
 import com.fozimat.catafozmovie.data.source.local.entity.MoviesEntity
 import com.fozimat.catafozmovie.utils.DataDummy
@@ -30,7 +31,10 @@ class MoviesViewModelTest {
     private lateinit var movieRepository: MovieRepository
 
     @Mock
-    private lateinit var observer: Observer<Resource<List<MoviesEntity>>>
+    private lateinit var observer: Observer<Resource<PagedList<MoviesEntity>>>
+
+    @Mock
+    private lateinit var pagedList: PagedList<MoviesEntity>
 
     @Before
     fun setUp() {
@@ -39,8 +43,9 @@ class MoviesViewModelTest {
 
     @Test
     fun getMovies() {
-        val dummyMovies = Resource.success(DataDummy.generateDummyMovies())
-        val movies = MutableLiveData<Resource<List<MoviesEntity>>>()
+        val dummyMovies = Resource.success(pagedList)
+        `when`(dummyMovies.data?.size).thenReturn(10)
+        val movies = MutableLiveData<Resource<PagedList<MoviesEntity>>>()
         movies.value = dummyMovies
 
         `when`(movieRepository.getAllMovies()).thenReturn(movies)
