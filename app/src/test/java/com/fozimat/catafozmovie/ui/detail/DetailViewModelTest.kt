@@ -95,7 +95,7 @@ class DetailViewModelTest {
 
     @Test
     fun setMovieFav() {
-        val dummyMovies = Resource.success(dummyMovie)
+        val dummyMovies = Resource.success(dummyMovie.copy(favorited = false))
         val movies = MutableLiveData<Resource<MoviesEntity>>()
         movies.value = dummyMovies
 
@@ -108,7 +108,7 @@ class DetailViewModelTest {
 
     @Test
     fun setTvShowFav() {
-        val dummyShow = Resource.success(dummyShow)
+        val dummyShow = Resource.success(dummyShow.copy(favorited = false))
         val movies = MutableLiveData<Resource<TvShowEntity>>()
         movies.value = dummyShow
 
@@ -121,7 +121,7 @@ class DetailViewModelTest {
 
     @Test
     fun deleteMovieFav() {
-        val dummyMovies = Resource.success(dummyMovie)
+        val dummyMovies = Resource.success(dummyMovie.copy(favorited = true))
         val movies = MutableLiveData<Resource<MoviesEntity>>()
         movies.value = dummyMovies
 
@@ -134,7 +134,7 @@ class DetailViewModelTest {
 
     @Test
     fun deleteTvShowFav() {
-        val dummyShow = Resource.success(dummyShow)
+        val dummyShow = Resource.success(dummyShow.copy(favorited = true))
         val movies = MutableLiveData<Resource<TvShowEntity>>()
         movies.value = dummyShow
 
